@@ -474,7 +474,7 @@ var DEFAULTS$1 = {};var createReactotronStoreEnhancer = function createReactotro
         var ms = elapsed();
 
         // action not blacklisted?
-        if (!R.contains(action.type, exceptions)) {
+        if (!R.contains(action.type, exceptions) && !R.contains('all', exceptions)) {
           // check if the app considers this important
           var important = false;
           if (enhancerOptions && typeof enhancerOptions.isActionImportant === 'function') {
